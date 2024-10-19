@@ -1,8 +1,14 @@
 {
   "name": "test-component",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "main": "dist/my-component-library.cjs.js",   
+  "module": "dist/my-component-library.es.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
