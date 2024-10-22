@@ -10,8 +10,6 @@
     "README.md"
   ],
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "build-library": "vite build --mode build-library",
@@ -21,6 +19,7 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "sass": "^1.80.3",
     "styled-components": "^6.1.13"
   },
   "devDependencies": {

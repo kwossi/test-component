@@ -1,14 +1,26 @@
-import styled from "styled-components";
-import "./Button.module.css";
+import styles from "./Button.module.scss";
 
-const StyledButton = styled.button`
-  background-color: ${(props) => props.color || "blue"};
-`;
+const Button = ({
+  children,
+  color = "primary",
+  onClick,
+  style,
+  size = "medium",
+  radius = "none",
+  border = "none",
+  className,
+}) => {
+  const combinedClassNames = `${styles.button} ${styles[`border-${border}`]} ${
+    styles[`radius-${radius}`]
+  } ${styles[`color-${color}`]} ${styles[`size-${size}`]} ${
+    className || ""
+  }`.trim();
 
-const Button = (props) => (
-  <StyledButton color={props.color} onClick={props.onClick} style={props.style}>
-    {props.children}
-  </StyledButton>
-);
+  return (
+    <button onClick={onClick} style={style} className={combinedClassNames}>
+      {children}
+    </button>
+  );
+};
 
 export default Button;
