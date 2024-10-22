@@ -9,7 +9,8 @@ function App() {
         border="large"
         size="large"
         radius="full"
-        style={{ textDecoration: "underline", color: "green" }}
+        style={{ textDecoration: "underline", color: "black" }}
+        onClick={() => console.log("clicked")}
       >
         Nein!
       </Button>
