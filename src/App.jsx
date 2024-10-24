@@ -1,20 +1,20 @@
-//import "./App.css";
+import "./App.css";
 import Button from "./components/Button";
 
 function App() {
   return (
-    <>
+    <div className="wrapper">
       <Button
-        color="secondary"
-        border="large"
-        size="large"
-        radius="full"
-        style={{ textDecoration: "underline", color: "black" }}
+        color="danger"
+        border="lg"
+        size="lg"
+        radius="lg"
+        style={{ color: "black", margin: "100px" }}
         onClick={() => console.log("clicked")}
       >
-        Nein!
+        Nein
       </Button>
-    </>
+    </div>
   );
 }
 
