@@ -6,6 +6,9 @@
 
 .button {
   cursor: pointer;
+  &:hover {
+    border-color: darkred;
+  }
 }
 
 /* Size Classes */
