@@ -1,18 +1,12 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
-import postcss from "@vituum/vite-plugin-postcss";
+//import postcss from "@vituum/vite-plugin-postcss";
+import postcssPresetEnv from "postcss-preset-env";
 
 export default defineConfig(({ mode }) => {
   if (mode === "build-library") {
     return {
-      css: {
-        preprocessorOptions: {
-          scss: {
-            api: "modern-compiler",
-          },
-        },
-      },
       build: {
         lib: {
           entry: "./src/index.js", // Entry point for the library
@@ -30,7 +24,25 @@ export default defineConfig(({ mode }) => {
           },
         },
       },
-      plugins: [react(), postcss()],
+      cssCodeSplit: false,
+      plugins: [react()],
+      css: {
+        preprocessorOptions: {
+          scss: {
+            api: "modern-compiler",
+          },
+        },
+        postcss: {
+          plugins: [
+            postcssPresetEnv({
+              stage: 0, // Enables CSS custom properties processing
+              features: {
+                "custom-properties": true,
+              },
+            }),
+          ],
+        },
+      },
     };
   }
 

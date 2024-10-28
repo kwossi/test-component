@@ -1,8 +1,8 @@
 /* src/components/Button/Button.scss */
-@use "../library/colors.scss" as colors;
-@use "../library/font-sizes.scss" as font-size;
-@use "../library/paddings.scss" as padding;
-@use "../library/radius.scss" as radius;
+@use "../library/colors.scss";
+@use "../library/font-sizes.scss";
+@use "../library/paddings.scss";
+@use "../library/radius.scss";
 
 .button {
   cursor: pointer;
