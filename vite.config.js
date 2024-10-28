@@ -37,7 +37,7 @@ export default defineConfig(({ mode }) => {
         postcss: {
           plugins: [
             postcssPresetEnv({
-              stage: 0, // Enables CSS custom properties processing
+              stage: 0,
               features: {
                 "custom-properties": true,
               },
