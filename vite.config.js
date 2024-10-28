@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
+import postcss from "@vituum/vite-plugin-postcss";
 
 export default defineConfig(({ mode }) => {
   if (mode === "build-library") {
@@ -29,7 +30,7 @@ export default defineConfig(({ mode }) => {
           },
         },
       },
-      plugins: [react()],
+      plugins: [react(), postcss()],
     };
   }
 
