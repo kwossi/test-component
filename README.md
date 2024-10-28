@@ -1,8 +1,40 @@
-# React + Vite
+## Instructions for build:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+```shell
+npm run build-library
+```
 
-Currently, two official plugins are available:
+    -> should create the bundled files, cjs, es
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+then push to github
+
+you can then use npm to install the library in a different vite project:
+
+```
+npm i git+https://github.com/kwossi/test-component.git
+```
+
+or from a specific branch
+
+```
+npm i git+https://github.com/kwossi/test-component.git#branch
+```
+
+import the Button component, and use with property: color: 'secondary' in App.jsx
+
+```js
+import "./App.css";
+import { Button } from "test-component";
+
+function App() {
+  return (
+    <>
+      <Button color="secondary">Na</Button>
+    </>
+  );
+}
+
+export default App;
+```
+
+(or use this repository: [button-test](https://github.com/kwossi/button-test))
