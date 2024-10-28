@@ -1,3 +1,24 @@
+/* colors.scss */
+:root {
+  --primary-base: blue;
+  --primary-dark: darkblue;
+
+  --default-base: grey;
+  --default-dark: black;
+
+  --secondary-base: purple;
+  --secondary-dark: rgb(83, 2, 83);
+
+  --success-base: green;
+  --success-dark: darkgreen;
+
+  --warning-base: yellow;
+  --warning-dark: goldenrod;
+
+  --danger-base: red;
+  --danger-dark: darkred;
+}
+
 $primary-base: blue;
 $primary-dark: darkblue;
 
@@ -12,6 +33,5 @@ $success-dark: darkgreen;
 
 $warning-base: yellow;
 $warning-dark: goldenrod;
-
 $danger-base: red;
 $danger-dark: darkred;
