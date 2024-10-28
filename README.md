@@ -38,3 +38,22 @@ export default App;
 ```
 
 (or use this repository: [button-test](https://github.com/kwossi/button-test))
+
+### Updates
+
+- importing the stylesheet from node_modules in the test repo (button-test) works, this code now renders a purple button:
+
+```js
+import { Button } from "test-component";
+import "test-component/dist/style.css";
+
+function App() {
+  return (
+    <>
+      <Button color="secondary">Na</Button>
+    </>
+  );
+}
+
+export default App;
+```
