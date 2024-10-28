@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => {
         lib: {
           entry: "./src/index.js", // Entry point for the library
           name: "MyComponentLibrary",
-          formats: ["es", "cjs"],
+          formats: ["es", "cjs", "umd"],
           fileName: (format) => `my-component-library.${format}.js`,
         },
         rollupOptions: {
