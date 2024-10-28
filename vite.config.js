@@ -1,9 +1,10 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
+const pathSrc = path.resolve(__dirname, "./src");
 //import postcss from "@vituum/vite-plugin-postcss";
 import postcssPresetEnv from "postcss-preset-env";
-
+console.log(pathSrc);
 export default defineConfig(({ mode }) => {
   if (mode === "build-library") {
     return {
@@ -30,6 +31,8 @@ export default defineConfig(({ mode }) => {
         preprocessorOptions: {
           scss: {
             api: "modern-compiler",
+            // additionalData: `@use "${pathSrc}/library/colors.scss";`,
+            includePaths: ["node_modules"],
           },
         },
         postcss: {
