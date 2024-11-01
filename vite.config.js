@@ -1,19 +1,20 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
-const pathSrc = path.resolve(__dirname, "./src");
-//import postcss from "@vituum/vite-plugin-postcss";
 import postcssPresetEnv from "postcss-preset-env";
+
 export default defineConfig(({ mode }) => {
   if (mode === "build-library") {
     return {
       build: {
         lib: {
-          entry: "./src/index.js", // Entry point for the library
-          name: "MyComponentLibrary",
-          formats: ["es", "cjs", "umd"],
-          fileName: (format) => `my-component-library.${format}.js`,
+          entry: "./src/index.js",
+          name: "Framework",
+          formats: ["es", "cjs"],
+          fileName: (format) => `framework.${format}.js`,
         },
+        cssCodeSplit: false,
+        emptyOutDir: true,
         rollupOptions: {
           external: ["react", "react-dom"],
           output: {
@@ -24,26 +25,23 @@ export default defineConfig(({ mode }) => {
           },
         },
       },
-      cssCodeSplit: false,
       plugins: [react()],
       css: {
         preprocessorOptions: {
           scss: {
             api: "modern-compiler",
-            additionalData: `@use "${pathSrc}/library/colors.scss";`,
-            includePaths: ["node_modules"],
           },
         },
-        postcss: {
-          plugins: [
-            postcssPresetEnv({
-              stage: 0,
-              features: {
-                "custom-properties": true,
-              },
-            }),
-          ],
-        },
+      },
+      postcss: {
+        plugins: [
+          postcssPresetEnv({
+            stage: 0,
+            features: {
+              "custom-properties": true,
+            },
+          }),
+        ],
       },
     };
   }
